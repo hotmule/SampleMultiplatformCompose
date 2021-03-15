@@ -4,11 +4,8 @@ plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose") version "0.4.0-build173"
     id("com.android.library")
-    id("kotlin-android-extensions")
+    id("kotlin-parcelize")
 }
-
-group = "ru.hotmule"
-version = "1.0"
 
 repositories {
     google()
@@ -27,6 +24,8 @@ kotlin {
                 api(compose.runtime)
                 api(compose.foundation)
                 api(compose.material)
+                api("com.arkivanov.decompose:decompose:0.1.9")
+                api("com.arkivanov.decompose:extensions-compose-jetbrains:0.1.9")
             }
         }
         val commonTest by getting
